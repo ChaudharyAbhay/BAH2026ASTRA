@@ -1,0 +1,41 @@
+ASTRA BATCH CLASSIFICATION SUMMARY
+============================================================
+
+CLASSIFICATION AND VOTING
+------------------------------------------------------------
+File: lightcurvefilesector102\tess2026086090000-s0102-0000000007439481-0304-s_lc.fits
+Final Class: Noise / Artifact
+Final Confidence: 28.31%
+Detection Quality Flag: F
+AI Label: Noise / Instrumental Artifact
+Votes: {'Planetary Transit Candidate': 0, 'Eclipsing Binary': 0, 'Noise / Artifact': 5, 'Uncertain': 0}
+
+PARAMETERS
+------------------------------------------------------------
+Orbital Period: 1.255549 days
+Transit Duration: 0.044000 days
+Transit Depth: 4.0721%
+SNR: 1.89
+Adversarial Robustness: 0.00%
+
+============================================================
+
+CLASSIFICATION AND VOTING
+------------------------------------------------------------
+File: lightcurvefilesector102\tess2026086090000-s0102-0000000030067072-0304-s_lc.fits
+Final Class: Noise / Artifact
+Final Confidence: 13.86%
+Detection Quality Flag: F
+AI Label: Noise / Instrumental Artifact
+Votes: {'Planetary Transit Candidate': 0, 'Eclipsing Binary': 0, 'Noise / Artifact': 5, 'Uncertain': 0}
+
+PARAMETERS
+------------------------------------------------------------
+Orbital Period: 0.405095 days
+Transit Duration: 0.240000 days
+Transit Depth: 0.1126%
+SNR: 0.92
+Adversarial Robustness: 0.00%
+
+============================================================
+

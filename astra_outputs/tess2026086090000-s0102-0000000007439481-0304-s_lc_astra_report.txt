@@ -1,0 +1,43 @@
+ASTRA LIGHT CURVE CLASSIFICATION REPORT
+==================================================
+
+1. CLASSIFICATION AND VOTING
+--------------------------------------------------
+File: lightcurvefilesector102\tess2026086090000-s0102-0000000007439481-0304-s_lc.fits
+Final Class: Noise / Artifact
+Final Confidence: 28.31%
+Detection Quality Flag: F
+AI Label: Noise / Instrumental Artifact
+AI Confidence: 45.00%
+Votes: {'Planetary Transit Candidate': 0, 'Eclipsing Binary': 0, 'Noise / Artifact': 5, 'Uncertain': 0}
+
+2. DETECTED SIGNAL PARAMETERS
+--------------------------------------------------
+Orbital Period: 1.255549 days
+Transit Duration: 0.044000 days
+Transit Duration: 1.0560 hours
+Transit Depth: 0.040721
+Transit Depth: 4.0721%
+SNR: 1.89
+Number of Transits: 18
+
+3. VALIDATION TESTS
+--------------------------------------------------
+Periodicity Score: 100.00
+Shape Score: 24.48
+SNR Score: 18.87
+Binary Rejection Score: 97.38
+Noise Score: 11.56
+Transit Reliability Score: 54.88
+Adversarial Robustness: 0.00%
+Adversarial Recovery: 0 / 100
+
+4. FALSE POSITIVE INDICATORS
+--------------------------------------------------
+Secondary Eclipse Depth: 0.001231
+Odd-Even Transit Difference: 0.001390
+Duration Fraction: 0.035044
+
+5. INTERPRETATION
+--------------------------------------------------
+The strongest dip-like pattern detected in this light curve is not strong enough to be considered a reliable planetary transit. The signal has low SNR and/or failed robustness validation. The period, depth, and duration reported above represent the best-fitting BLS signal, not a confirmed planet.
