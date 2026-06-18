@@ -22,6 +22,11 @@ def load_tess_fits(file_path):
         hdul.verify("silentfix")
         data = hdul[1].data
         columns = data.columns.names
+        header = hdul[0].header
+
+        tic_id = header.get("TICID", "Unknown")
+        sector = header.get("SECTOR", "Unknown")
+        tessmag = header.get("TESSMAG", "Unknown")
 
         time = np.array(data["TIME"], dtype=float)
 
@@ -39,7 +44,7 @@ def load_tess_fits(file_path):
         else:
             flux_err = np.full_like(flux, np.nanstd(flux))
 
-    return time, flux, flux_err
+    return time, flux, flux_err, tic_id, sector, tessmag
 
 
 # ============================================================
@@ -578,7 +583,7 @@ def run_astra_pipeline(file_path, n_adversarial=100, output_dir="astra_outputs")
     os.makedirs(output_dir, exist_ok=True)
 
     print("[1] Loading FITS file...")
-    time, flux, flux_err = load_tess_fits(file_path)
+    time, flux, flux_err, tic_id, sector, tessmag = load_tess_fits(file_path)
 
     print("[2] Cleaning light curve...")
     time, flux, flux_err = clean_light_curve(time, flux, flux_err)
@@ -633,6 +638,9 @@ def run_astra_pipeline(file_path, n_adversarial=100, output_dir="astra_outputs")
         "detection_quality_flag": quality_flag,
         "ai_label": ai_label,
         "ai_confidence_percent": ai_confidence,
+        "tic_id": tic_id,
+        "sector": sector,
+        "tessmag": tessmag,
 
         "orbital_period_days": features["period"],
         "transit_duration_days": features["duration"],
@@ -668,6 +676,9 @@ def run_astra_pipeline(file_path, n_adversarial=100, output_dir="astra_outputs")
 
     print("\n================ ASTRA FINAL RESULT ================\n")
     print(f"File: {file_path}")
+    print(f"TIC ID: {tic_id}")
+    print(f"Sector: {sector}")  
+    print(f"TESS Magnitude: {tessmag}")
     print(f"Final Class: {final_class}")
     print(f"Final Confidence: {final_confidence:.2f}%")
     print(f"Detection Quality Flag: {quality_flag}")
@@ -732,6 +743,9 @@ def run_folder(folder_path, n_adversarial=50, output_dir="astra_outputs"):
                 f.write("CLASSIFICATION AND VOTING\n")
                 f.write("-" * 60 + "\n")
                 f.write(f"File: {result['file']}\n")
+                f.write(f"TIC ID: {result['tic_id']}\n")
+                f.write(f"Sector: {result['sector']}\n")
+                f.write(f"TESS Magnitude: {result['tessmag']}\n")
                 f.write(f"Final Class: {result['final_class']}\n")
                 f.write(f"Final Confidence: {result['final_confidence_percent']:.2f}%\n")
                 f.write(f"Detection Quality Flag: {result['detection_quality_flag']}\n")

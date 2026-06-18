@@ -3,7 +3,7 @@ ASTRA LIGHT CURVE CLASSIFICATION REPORT
 
 1. CLASSIFICATION AND VOTING
 --------------------------------------------------
-File: lightcurvefilesector102\tess2026086090000-s0102-0000000007439481-0304-s_lc.fits
+File: .\lightcurvefilesector102\tess2026086090000-s0102-0000000007439481-0304-s_lc.fits
 Final Class: Noise / Artifact
 Final Confidence: 28.31%
 Detection Quality Flag: F
